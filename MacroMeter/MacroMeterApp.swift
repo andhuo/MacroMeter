@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct MacroMeterApp: App {
+    @StateObject private var viewModel = AppViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootTabView()
+                .environmentObject(viewModel)
         }
     }
 }
